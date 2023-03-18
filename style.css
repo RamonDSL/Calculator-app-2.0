@@ -1,0 +1,157 @@
+:root {
+    /* Backgrounds */
+    --body-bg: hsl(0, 0%, 90%);
+    --keypad-bg: hsl(0, 5%, 81%);
+    --screen-bg: hsl(0, 0%, 93%);
+
+    /* Keys */
+    --clean-key-bg: hsl(185, 42%, 37%);
+    --clean-key-shadow: hsl(185, 58%, 25%);
+
+    --calc-key-bg: hsl(25, 98%, 40%);
+    --calc-key-shadow: hsl(25, 99%, 27%);
+    --special-key-bg: hsl(25, 97%, 37%);
+    --special-key-shadow: hsl(25, 95%, 34%);
+
+    --numerical-key-bg: hsl(45, 7%, 89%);
+    --numerical-key-shadow: hsl(35, 11%, 61%);
+
+    /* text */
+    --numerical-key-color: hsl(60, 10%, 19%);
+    --key-text-color: hsl(0, 0%, 100%);
+    --screen-color: hsl(60, 10%, 19%);
+
+    --numerical-key-bg-hover: hsl(0, 0%, 100%);
+    --calc-key-bg-hover: hsl(25, 98%, 50%);
+    --special-key-bg-hover: hsl(25, 96%, 45%);
+    --clean-key-bg-hover: hsl(185, 49%, 55%);
+}
+
+html[data-theme="theme-2"] {
+    /* Backgrounds */
+    --body-bg: hsl(0, 0%, 90%);
+    --keypad-bg: hsl(0, 5%, 81%);
+    --screen-bg: hsl(0, 0%, 93%);
+
+    /* Keys */
+    --clean-key-bg: hsl(185, 42%, 37%);
+    --clean-key-shadow: hsl(185, 58%, 25%);
+
+    --calc-key-bg: hsl(25, 98%, 40%);
+    --calc-key-shadow: hsl(25, 99%, 27%);
+
+    --numerical-key-bg: hsl(45, 7%, 89%);
+    --numerical-key-shadow: hsl(35, 11%, 61%);
+
+    /* text */
+    --numerical-key-color: hsl(60, 10%, 19%);
+    --key-text-color: hsl(0, 0%, 100%);
+    --screen-color: hsl(60, 10%, 19%);
+
+    --numerical-key-bg-hover: hsl(0, 0%, 100%);
+    --calc-key-bg-hover: hsl(25, 98%, 50%);
+    --clean-key-bg-hover: hsl(185, 49%, 55%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--body-bg);
+}
+
+main {
+    border: 15px double var(--black);
+    width: 350px;
+    background-color: var(--color-6);
+}
+
+section.screen {
+    font-size: 2.6em;
+    padding: 15px;
+    text-align: right;
+    color: var(--screen-color);
+    background-color: var(--screen-bg);
+    min-height: 80px;
+}
+
+section.screen > p {
+    padding-top: 5px;
+    overflow-x: auto;
+} 
+
+section.toolbar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+    padding-top: 25px;
+    gap: 15px;
+    background-color: var(--keypad-bg);
+    min-height: 340px;
+}
+
+section.toolbar > button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: var(--numerical-key-color);
+    background-color: var(--numerical-key-bg);
+    box-shadow: inset 0px -5px 0 var(--numerical-key-shadow);
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+
+section.toolbar > button:active {
+    opacity: .8;
+}
+
+section.toolbar > button:hover {
+    background-color: var(--numerical-key-bg-hover);
+}
+
+section.toolbar > button[data-key-value="AC"],
+section.toolbar > button[data-key-value="DEL"] {
+    background-color: var(--clean-key-bg);
+    box-shadow: inset 0px -5px 0 var(--clean-key-shadow);
+    color: var(--key-text-color);
+}
+
+section.toolbar > button[data-key-value="AC"]:hover,
+section.toolbar > button[data-key-value="DEL"]:hover {
+    background-color: var(--clean-key-bg-hover);
+}
+
+section.toolbar > button[data-key-value="="] {
+    background-color: var(--calc-key-bg);
+    box-shadow: inset 0px -5px 0 var(--calc-key-shadow);
+    color: var(--key-text-color);
+}
+
+section.toolbar > button[data-key-value="="]:hover {
+    background-color: var(--calc-key-bg-hover);
+}
+
+section.toolbar > button.special-key {
+    background-color: var(--special-key-bg);
+    box-shadow: inset 0px -5px 0 var(--special-key-shadow);
+    color: var(--key-text-color);
+}
+
+section.toolbar > button.special-key:hover {
+    background-color: var(--special-key-bg-hover);
+}
+
+section.toolbar > button[data-key-value="^"] {
+    font-size: 2.2rem;
+}
+
+
+
